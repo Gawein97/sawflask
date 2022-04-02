@@ -6,11 +6,11 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
 
     app.config.from_object("config.settings")
-    app.config.from_pyfile("settings.py", silent=True)
+    app.config.from_pyfile("settings.py_production_example", silent=True)
 
     @app.route("/")
     def index():
         """response from home page"""
-        return "Sup bitches"
+        return "Hello world"
 
     return app
