@@ -11,6 +11,6 @@ def create_app(test_config=None):
     @app.route("/")
     def index():
         """response from home page"""
-        return "Hello World"
+        return "Sup bitches"
 
     return app
