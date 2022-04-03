@@ -1,4 +1,5 @@
 from flask import Flask
+from snakeeyes.blueprints.page import page
 
 
 def create_app(test_config=None):
@@ -8,9 +9,6 @@ def create_app(test_config=None):
     app.config.from_object("config.settings")
     app.config.from_pyfile("settings.py_production_example", silent=True)
 
-    @app.route("/")
-    def index():
-        """response from home page"""
-        return "Hello world"
+    app.register_blueprint(page)
 
     return app
