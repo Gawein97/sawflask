@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
 
 page = Blueprint("page", __name__, template_folder="templates")
 
@@ -6,7 +6,7 @@ page = Blueprint("page", __name__, template_folder="templates")
 @page.route("/")
 @page.route("/home")
 def home():
-    return "<h1>Home page</h1>"
+    return render_template("home.html")
 
 
 @page.route("/about")

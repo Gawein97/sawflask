@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="{% block meta_desc %}{% endblock %}">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet"
+          href="{{ url_for("static", filename="styles/vendor/bootstrap.min.css") }}">
+</head>
+<body>
+    <main class="container">
+        {% block body %}{% endblock %}
+    </main>
+    <script
+          src="{{ url_for('static', filename='scripts/vendor/bootstrap.bundle.min.js') }}">
+    </script>
+</body>
+</html>
