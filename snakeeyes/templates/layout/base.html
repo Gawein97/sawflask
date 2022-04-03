@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,13 +8,88 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet"
           href="{{ url_for("static", filename="styles/vendor/bootstrap.min.css") }}">
+    <link rel="stylesheet"
+          href="{{ url_for("static", filename="styles/main.css") }}">
+    <script src="https://kit.fontawesome.com/fcf888d948.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="d-flex flex-column h-100">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+        <div class="container">
+    <!-- Navbar brand -->
+            <a class="navbar-brand me-2" href="{{ url_for("page.home") }}">
+              <img
+                src="{{ url_for('static', filename='images/snake-eyes.jpg') }}"
+                width="229" height="50"
+                alt="MDB Logo"
+                loading="lazy"
+              />
+            </a>
+
+    <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarButtonsExample"
+          aria-controls="navbarButtonsExample"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+
+    <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarButtonsExample">
+          <!-- Left links -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dashboard</a>
+            </li>
+          </ul>
+          <!-- Left links -->
+
+          <div class="d-flex align-items-center">
+            <button type="button" class="btn login px-3 me-2">
+              Login
+            </button>
+            <button type="button" class="btn btn-dark me-3">
+              Sign up for free
+            </button>
+          </div>
+        </div>
+    <!-- Collapsible wrapper -->
+    </div>
+  <!-- Container wrapper -->
+</nav>
     <main class="container">
-        {% block body %}{% endblock %}
+      <div class="md-margin-top">{% block heading %}{% endblock %}</div>
+      {% block body %}{% endblock %}
     </main>
+
+{#    <footer class="footer text-center">#}
+{#      <div class="container">#}
+{#        <ul class="list-inline">#}
+{#          <li class="text-muted">Snake Eyes &copy; {{ now.year }}</li>#}
+{#          <li><a href="{{ url_for('page.privacy') }}">Privacy Policy</a></li>#}
+{#          <li><a href="{{ url_for('page.terms') }}">Terms of Service</a></li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </footer>#}
+    <footer class="py-3 mt-auto footer">
+        <div class="container">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="{{ url_for('page.privacy') }}" class="nav-link px-2 text-muted">Privacy</a></li>
+                <li class="nav-item"><a href="{{ url_for('page.terms') }}" class="nav-link px-2 text-muted">Terms</a></li>
+                <li class="nav-item"><a href="{{ url_for('page.about') }}" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+            <p class="text-center text-muted">&copy;Snake Eyes &copy; {{ now.year }}</p>
+        </div>
+    </footer>
+
     <script
-          src="{{ url_for('static', filename='scripts/vendor/bootstrap.bundle.min.js') }}">
+      src="{{ url_for('static', filename='scripts/vendor/bootstrap.bundle.min.js') }}">
     </script>
-</body>
+  </body>
 </html>
