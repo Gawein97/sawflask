@@ -16,9 +16,9 @@ def about():
 
 @page.route("/terms")
 def terms():
-    return "<h1>Terms and conditions</h1>"
+    return render_template("terms.html")
 
 
 @page.route("/privacy")
 def privacy():
-    return "<h1>Privacy page</h1>"
+    return render_template("privacy.html")
