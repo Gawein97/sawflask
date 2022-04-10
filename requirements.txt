@@ -20,7 +20,6 @@ pyflakes==2.4.0
 pyparsing==3.0.7
 pytest==7.1.1
 pytest-cov==3.0.0
--e git+ssh://git@github.com/Gawein97/sawflask.git@e20c112f5c3fe9fe7cede6052c6ddd87d78379f1#egg=SnakeEyes_CLI
 tomli==2.0.1
 typing_extensions==4.1.1
 Werkzeug==2.1.1
