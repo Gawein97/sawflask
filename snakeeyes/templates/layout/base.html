@@ -13,59 +13,91 @@
     <script src="https://kit.fontawesome.com/fcf888d948.js" crossorigin="anonymous"></script>
 </head>
 <body class="d-flex flex-column h-100">
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <!-- Container wrapper -->
         <div class="container">
-    <!-- Navbar brand -->
-            <a class="navbar-brand me-2" href="{{ url_for("page.home") }}">
+            <a class="navbar-brand" href="{{ url_for("page.home") }}">
               <img
                 src="{{ url_for('static', filename='images/snake-eyes.jpg') }}"
                 width="229" height="50"
-                alt="MDB Logo"
                 loading="lazy"
               />
             </a>
-
-    <!-- Toggle button -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-mdb-toggle="collapse"
-          data-mdb-target="#navbarButtonsExample"
-          aria-controls="navbarButtonsExample"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-            <i class="fas fa-bars"></i>
-        </button>
-
-    <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarButtonsExample">
-          <!-- Left links -->
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for("page.home") }}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Dashboard</a>
-            </li>
-          </ul>
-          <!-- Left links -->
-
-          <div class="d-flex align-items-center">
-            <button type="button" class="btn login px-3 me-2">
-              Login
+             <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navmenu"
+            >
+                <i class="fas fa-bars"></i>
             </button>
-            <button type="button" class="btn btn-dark me-3">
-              Sign up for free
-            </button>
-          </div>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a href="{{ url_for("page.home") }}" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#dashboard" class="nav-link">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center d-none d-lg-block">
+                <button type="button" class="btn login px-3 me-2">Login</button>
+                <button type="button" class="btn btn-dark me-3">Sign up for free</button>
+            </div>
         </div>
-    <!-- Collapsible wrapper -->
-    </div>
-  <!-- Container wrapper -->
-</nav>
+    </nav>
+    <!-- Navbar -->
+{#    <nav class="navbar navbar-expand-lg navbar-light bg-light">#}
+{#  <!-- Container wrapper -->#}
+{#        <div class="container">#}
+{#    <!-- Navbar brand -->#}
+{#            <a class="navbar-brand me-2" href="{{ url_for("page.home") }}">#}
+{#              <img#}
+{#                src="{{ url_for('static', filename='images/snake-eyes.jpg') }}"#}
+{#                width="229" height="50"#}
+{#                loading="lazy"#}
+{#              />#}
+{#            </a>#}
+{##}
+{#    <!-- Toggle button -->#}
+{#        <button#}
+{#          class="navbar-toggler"#}
+{#          type="button"#}
+{#          data-mdb-toggle="collapse"#}
+{#          data-mdb-target="#navbarButtonsExample"#}
+{#          aria-controls="navbarButtonsExample"#}
+{#          aria-expanded="false"#}
+{#          aria-label="Toggle navigation"#}
+{#        >#}
+{#            <i class="fas fa-bars"></i>#}
+{#        </button>#}
+{##}
+{#    <!-- Collapsible wrapper -->#}
+{#        <div class="collapse navbar-collapse" id="navbarButtonsExample">#}
+{#          <!-- Left links -->#}
+{#          <ul class="navbar-nav me-auto mb-2 mb-lg-0">#}
+{#            <li class="nav-item">#}
+{#              <a class="nav-link" href="{{ url_for("page.home") }}">Home</a>#}
+{#            </li>#}
+{#            <li class="nav-item">#}
+{#              <a class="nav-link" href="#">Dashboard</a>#}
+{#            </li>#}
+{#          </ul>#}
+{#          <!-- Left links -->#}
+{##}
+{#          <div class="d-flex align-items-center">#}
+{#            <button type="button" class="btn login px-3 me-2">#}
+{#              Login#}
+{#            </button>#}
+{#            <button type="button" class="btn btn-dark me-3">#}
+{#              Sign up for free#}
+{#            </button>#}
+{#          </div>#}
+{#        </div>#}
+{#    <!-- Collapsible wrapper -->#}
+{#    </div>#}
+{#  <!-- Container wrapper -->#}
+{#</nav>#}
     <main class="container">
       <div class="md-margin-top">{% block heading %}{% endblock %}</div>
       {% block body %}{% endblock %}
